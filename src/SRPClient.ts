@@ -2,6 +2,7 @@ import { SRPParams } from './SRPParams';
 import { SRP, SRPKeyPair } from './SRP';
 import { constantTimeEq } from './utils/constantTimeEq';
 import { resetBuffer } from './utils/resetBuffer';
+import { Buffer } from "buffer";
 
 export class SRPClient {
     private readonly _srp: SRP;

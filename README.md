@@ -1,3 +1,7 @@
+This is a browser-only version of the original [srp6a](https://www.npmjs.com/package/srp6a) project, which can be easily
+used with webpack and simillar systems. The original project uses [universal-secure-random](https://www.npmjs.com/package/universal-secure-random), which in turn uses `require(...)` directly and is therefore a problem when being
+used with [Angular](https://angular.io/).
+
 # SRP-6a implementation for js
 [![Version npm](https://img.shields.io/npm/v/srp6a.svg?logo=npm)](https://www.npmjs.com/package/srp6a)
 

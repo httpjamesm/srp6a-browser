@@ -1,4 +1,5 @@
 import { BigInteger } from 'jsbn';
+import { Buffer } from "buffer";
 
 const kBigInteger = Symbol('big-integer');
 

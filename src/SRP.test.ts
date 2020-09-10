@@ -1,6 +1,5 @@
 import { SRPServer } from './SRPServer';
 import { SRPClient } from './SRPClient';
-import crypto from 'crypto';
 import { SRP } from './SRP';
 
 describe('SRP', () => {

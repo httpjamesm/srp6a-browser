@@ -1,7 +1,8 @@
 import { BigInt } from './utils/BigInt';
-import { randomBytes } from 'universal-secure-random';
 import { SRPParams, createSRPEngine } from './SRPParams';
 import { SRPEngine } from './engine/SRPEngine';
+import { randomBytes } from "./random_bytes";
+import { Buffer } from "buffer";
 
 export type SRPKeyPair = { secretKey: Buffer, publicKey: Buffer };
 
@@ -18,8 +19,8 @@ export class SRP {
      * Generate User Salt
      * @param length Length of salt. Default is 16.
      */
-    generateSalt(length: number = 16) {
-        return randomBytes(length);
+    generateSalt(length: number = 16): Buffer {
+        return Buffer.from(randomBytes(length));
     }
 
     /**
@@ -49,7 +50,7 @@ export class SRP {
      * Generate Client Ephemeral Key
      */
     generateClientEphemeralKey(): SRPKeyPair {
-        const secretKey = randomBytes(this._engine.Nbytes);
+        const secretKey = Buffer.from(randomBytes(this._engine.Nbytes));
         const publicKey = this._engine.computeA(BigInt.fromBuffer(secretKey)).toBuffer();
         return {
             secretKey,
@@ -62,7 +63,7 @@ export class SRP {
      * @param verifier User's verifier
      */
     generateServerEphemeralKey(verifier: Buffer): SRPKeyPair {
-        const secretKey = randomBytes(this._engine.Nbytes);
+        const secretKey = Buffer.from(randomBytes(this._engine.Nbytes));
         const publicKey = this._engine.computeB(BigInt.fromBuffer(secretKey), BigInt.fromBuffer((verifier))).toBuffer();
         return {
             secretKey,

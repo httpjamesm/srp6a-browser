@@ -1,3 +1,5 @@
+import { Buffer } from "buffer";
+
 export function constantTimeEq(a: Buffer, b: Buffer) {
     if (a.length !== b.length) {
         return false;

@@ -1,6 +1,7 @@
 import { SRPParams } from "./SRPParams";
 import { SRP, SRPKeyPair } from "./SRP";
 import { constantTimeEq } from "./utils/constantTimeEq";
+import { Buffer } from "buffer";
 
 export class SRPServer {
     private readonly _srp: SRP;
