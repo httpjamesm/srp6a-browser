@@ -1,6 +1,6 @@
 {
   "name": "srp6a-browser",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "dist/index.js",
   "repository": "https://github.com/nanobot248/srp6a-browser.git",
   "author": "Andreas Hubert <nanobot248@gmail.com>",
