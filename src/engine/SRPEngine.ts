@@ -1,6 +1,7 @@
 import { BigInt } from "./../utils/BigInt";
 import { bufferFromSpecHex, padLeft } from "./convert";
 import { createSHA } from "./createSHA";
+import { Buffer } from "buffer";
 
 /**
  * Hash function interface
